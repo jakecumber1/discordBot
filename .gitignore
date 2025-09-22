@@ -1,0 +1,14 @@
+#config, namely my bot's token
+config.json
+
+#Environment variables
+.env
+
+#node modules
+node_modules/
+
+#logs
+*.log
+
+#build output
+dist/

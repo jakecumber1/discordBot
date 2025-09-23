@@ -12,3 +12,7 @@ node_modules/
 
 #build output
 dist/
+
+#Coding style config
+eslint.config.js
+eslint.config.mjs

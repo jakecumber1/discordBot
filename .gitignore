@@ -14,5 +14,5 @@ node_modules/
 dist/
 
 #Coding style config
-eslint.config.js
+eslint.config
 eslint.config.mjs

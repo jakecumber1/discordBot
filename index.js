@@ -9,7 +9,12 @@ const { token } = require('./config.json');
 //Create a new client instance, .Guilds is an intent option which ensures caches for guilds, channels, and roles are populated for internal use.
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
+//Collection to store our type of commands
 client.commands = new Collection();
+
+//Collection to store our cooldowns for different commands
+client.cooldowns = new Collection();
+
 
 const foldersPath = path.join(__dirname, 'commands');
 const commandFolders = fs.readdirSync(foldersPath);
@@ -25,7 +30,7 @@ for (const folder of commandFolders) {
         if ('data' in command && 'execute' in command) {
             client.commands.set(command.data.name, command);
         } else {
-            console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property`)
+            console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property`);
         }
     }
 }

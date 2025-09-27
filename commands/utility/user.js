@@ -4,6 +4,7 @@ const { SlashCommandBuilder } = require('discord.js')
 //placed inside module.exports so they are exposed to other files like command loader and command deployment
 //This is what allows require() to work with other files
 module.exports = {
+    cooldown: 5,
     data: new SlashCommandBuilder()
         .setName('user')
         .setDescription('Provides user info.'),
